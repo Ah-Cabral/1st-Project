@@ -17,6 +17,6 @@ https://www.youtube.com/watch?v=L_JSUkn7LME&list=PLM_90--7SomWgfPYCXnpuoY2L-Z_Z-
 
 :up: Atualização
 
-:beatle: Correção de Bug
+:beetle: Correção de Bug
 
 :checkered_flag: Release (Entrega de uma Parte Funcional)

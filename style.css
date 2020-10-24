@@ -4,14 +4,111 @@
 
 
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0; /*Utilizado para remover margens de todos os elementos da página*/
+    padding: 0; /*Utilizado para remover margens de todos os elementos da página*/
+    list-style: none; /*Utilizado para remover estilos (círculo no canto esquerdo do nome em uma unordered list, por exemplo) de todos as listas da página */
+    text-decoration: none; /*Utilizado para remover estilos (sublinhado, por exemplo) de todos os links da página */
+}
+
+:root{ /*Atribuindo variáveis às fontes*/
+    --font-primary:"Baloo Da 2", serif; /*Fonte Primária*/
+    --font-secondary: "Josefin Slab", serif; /*Fonte Secundária*/
+    --font-action:"Mulish",serif; /*Fonte de Ação, a qual é usada para eventos de interação*/
+}
+
+.hamburger{ /*A div com a class hamburger tem como função conter as lines*/
+    width: 2em;
+    height: 2em;
+    position: fixed; /*Definido um posicionamento fixo para o hamburger, pois, independentemente de onde a página "se mova", o menu permanece no lado superior direito.*/
+    right: 2em;
+    top: 2em;
+    z-index: 100; /*Z-Index: index de determinação de profundidade, nesse caso, utiliza-se para colocar o hamburger como Z-Index de maior valor.*/
+    display: flex; /*Display flex é utilizado no intuito de organizar os elementos de forma dinâmica, em que, caso haja necessidade, eles se reorganizem.*/
+    flex-direction: column; /*Utilizado para indicar que os elementos serão distrubuídos um abaixo do outro, e não ao lado.*/
+    justify-content: space-evenly; /*Utilizado para delimitar espaçamento uniforme entre as linhas*/
+    cursor: pointer; /*Utilizado para indicar interatividade*/
+    transition: right 1s;
+}
+
+.show-menu .hamburger{ /*Aqui foi definido um novo pos. para o menu hamburger, quando estiver com o show-menu*/
+    right: 16em;
+}
+
+.line{
+    width: 100%; /*É definido um width de 100% para que percorra toda região da div, caracterizando assim uma linha.*/
+    height: .125rem;
+    
+    background: #FDC830;  
+    
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
+    
+    background: linear-gradient(to right, #F37335, #FDC830); 
+
+    transition: transform 1s;
+}
+
+.show-menu #line1 {
+    width: 100%; /*É definido um width de 100% para que percorra toda região da div, caracterizando assim, uma linha.*/
+    height: .125rem;
+    box-shadow: none;
+    transform: rotate(50deg) translate(0.3em, 0.55em); /*Para que o x seja inicialmente formado, é definida uma rotação de 60 graus, e uma troca de posição*/
+}
+
+.show-menu #line3{
+    width: 100%; /*É definido um width de 100% para que percorra toda região da div, caracterizando assim uma linha.*/
+    height: .125rem;
+    box-shadow: none;
+    transform: rotate(-48deg) translate(0.28em, -0.48em); /*Para que o x seja finalizado, é definida outra rotação de -60 graus, e uma troca de posição que caracterize o cruzamento.*/
+}
+
+.show-menu #line2{
+    opacity: 0;
+}
+
+.hamburger span{ /*Essa span é responsável pela indicação de fechamento do menu*/
+    position: absolute; /*Possui posição absoluta, para poder ser movimentada em qualquer posicionamento, a partir do elemento pai*/
+    font-family: var(--font-action); /*Fonte de ação escolhida*/
+    color: #ffffff;
+    left: 3em; /*Distância à esquerda*/
+    height: 2em; /*Altura e largura, para aumentar espaçamento e tamanho*/
+    width: 6em;
+    display: flex; /*Display flex, para flexbilizar a posição do elemento contido (texto)*/
+    justify-content: center; /*Nesse caso, ao centro, tanto no eixo X, quanto no eixo Y*/
+    align-items: center;
+    border-radius: 2px; /*border-radius, para arredondar as bordas da span*/
+    
+    /*Definindo background em gradiente*/
+    background: #FDC830;  
+    
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
+    
+    background: linear-gradient(to right, #F37335, #FDC830); 
+
+    /*Opacidade padrão 0, pois só é mostrado quando ocorrer interação (hover) com o menu hamburger dentro do hamburger.show-menu*/
+    opacity: 0;
+
+    transition: opacity 1s;
+
+}
+
+.hamburger span::before{ /*A partir daqui, será criado um pseudo elemento, onde será feito um triângulo que apontará para o X*/
+    content: "";
+    position: absolute;
+    border-right: 0.5em solid #F37335;
+    border-left: 0.5em solid transparent;
+    border-top: 0.5em solid transparent;
+    border-bottom: 0.5em solid transparent;
+    left: -1em;
+}
+
+.show-menu .hamburger:hover span{
+    opacity: 1;
 }
 
 header{ /*Configura-se a header para ocupar 100% do espaço do container (div que envolve toda página), tanto na largura (width), quanto
     na altura (height).*/
     width: 100%;
-    height: 100vh; 
+    height: 100vh; /*vh: Altura da visão, ao pé da letra*/
     overflow: hidden; /*Quando o overflow é desabilitado, removemos a possibilidade do cabeçalho passar o tamanho da janela
     e gerar uma barra de rolagem horizontal.*/
     position: relative; /*O posicionamento relativo é escolhido para que os elementos que possuam relacionamento absoluto
@@ -42,7 +139,7 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
 }
 
 .banner{
-    position: absolute; /*Ao invés de se posicionar de uma maneira estática (padrão), será atribuído à classe, um posicionamento absoluto.*/
+    position: absolute; /*Ao invés de se posicionar de uma maneira estática (padrão), será atribuído à classe, um posicionamento absoluto, onde pode-se posicionar qualquer elemento de acordo com o elemento*/
     
     top: 30%; /*Posicionamentos são definidos baseados em top, bottom, left e right, nesse caso foi escolhido 30% de espaçamento do topo*/
     
@@ -57,25 +154,25 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
                   devido a isso, existem 2 alternativas: em -> unidade relativa ao tamanho da fonte principal (elemento pai, que tem como padrão 16px).
                                                          rem -> unidade relativa ao tamanho da fonte principal da página, que é definido.*/
     
-    font-family: "Baloo Da 2", serif; /* Com o font-family: escolhe-se a fonte necessária, além dela escolhe-se também uma fonte alternativa; */
+    font-family: var(--font-primary); /* Com o font-family: escolhe-se a fonte necessária, além dela escolhe-se também uma fonte alternativa; */
     
     font-weight: 200; /*C om o font-weight: escolhe-se o peso da fonte escolhida, afinando ou deixando-a mais "gorda" */
     
-    text-shadow: .11em .05em 3px rgba(0, 0, 0, .6) ; /*O text-shadow possui algumas propriedades como: o distanciamento pra direita, o distanciamento para baixo o blur = o quão embaçado ficará a sombra, e a cor.*/
+    text-shadow: .11em .05em 3px rgba(0, 0, 0, .6) ; /*O text-shadow possui as mesmas propriedades do box-shadow       */
     
     margin-bottom: .2em; /*margin-bottom é utilizado para inserir uma margem na parte inferior do elemento*/
 
-    animation: movebanner 1.5s;
+    animation: movebanner 1.5s; /* O movebanner tem a característica de aparecer, a partir do h1, um elemento após o outro, por isso os tempos diferentes*/
 }
 
 .banner p{
-    font-family: "Josefin Slab";
+    font-family: var(--font-secondary);
     
-    font-size: 1.5em;
+    font-size: 2em;
     
     color: #ffffff;
     
-    text-shadow: .11em .05em 3px rgba(0, 0, 0, .6) ; /*Ao utilizar o rgba pode-se escolher: R- red (qtd. de vermelho), G- Green (qtd. de verde) B- Blue (qtd. de azul), A - Alpha (transparência da cor)*/
+    text-shadow: .11em .05em 3px rgba(0, 0, 0, 1) ; /*Ao utilizar o rgba pode-se escolher: R- red (qtd. de vermelho), G- Green (qtd. de verde) B- Blue (qtd. de azul), A - Alpha (transparência da cor)*/
     
     margin-bottom: 1em;
 
@@ -84,16 +181,17 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
 
 .banner button{
 
-    font-family: "Muli",serif;
+    font-family: var(--font-action);
 
     color: #ffffff;
 
     /*Para a cor do button, será utilizado um gradient, pego do site uigradients*/
-    background: #2193b0; 
+   
+    background: #FDC830;  
+   
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
 
-    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0); 
-
-    background: linear-gradient(to left, #6dd5ed, #2193b0);
+    background: linear-gradient(to right, #F37335, #FDC830); 
 
     padding: 1em 3em; /*Coloca-se o espaçamento característico do botão*/
 
@@ -105,12 +203,14 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
 
     cursor: pointer; /*Utilizado para indicar alteração ao ocorrer interação com o botão*/
 
+    transition:color 1s;
+
     animation: movebanner 2s;
 }
 
 .banner button:hover{ /*Evento hover é um evento de interação, ou seja, quando o mouse entrar em contato com o button*/
     opacity: 0.9; /* a opacidade diminuirá 10%*/
-    color: #00221f; /*A cor da fonte mudará*/
+    color: #1a0c05; /*A cor da fonte mudará*/
 }
 
 @keyframes zoom { /*Utilizar @keyframes é trabalhar com animações, nesse caso, iremos inserir uma animação de zoom*/
@@ -136,3 +236,66 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
     }
     
 }
+
+.sidebar{ 
+    width: 20em; /*É atribuído ao sidebar uma largura de 20em (Aprox. 320px)*/
+    height: 100vh; /*É atribuída uma altura de 100vh contemplando toda a página.*/
+    background-color: #ffffff;
+    position: fixed; /*A posição escolhida é a fixa, pois sempre ficará no lado direito da página (animação para esconder e aparecer será feita)*/
+    top: 0; /*Distância do topo*/
+    right: -20em; /*Distância da direita*/
+    transition: all 1s; /*Configura-se que todas as transições que ocorrerem no sidebar (nesse caso só ocorre uma) terão o tempo de 1 segundo.*/
+}
+
+.show-menu .sidebar{
+    right: 0em;
+}
+
+.menu{
+    position: absolute; /*Posicionamento absoluto definido (lembrando que atua para permitir que qualquer elemento se posicione de acordo com o elemento pai)*/
+    top: 40%; 
+    left: 50%;
+    align-items: center; /*Alinhamento dos itens do menu ao centro*/
+    transform: translate(-50%, -50%); /*Ocorre a transformação do menu, modificando a posição e colocando de uma forma mais centralizada*/
+}
+
+.menu-item{
+    text-align: center; /*Alinhamento do texto do menu ao centro*/
+    margin-bottom: .5em; /*Insere-se uma borda entre os itens*/
+}
+
+.menu-link{
+    font-size: 2em;
+    font-family: var(--font-action);
+    color: #fd9d30;
+    /*Defini-se a cor do link (normalmente)*/
+    transition: color 1s; /*Insere-se o tempo de 1 segundo para que a transição da cor para o estado hover (abaixo) ocorra*/
+}
+
+.menu-link:hover{
+    opacity: 0.9;
+}
+
+.social-media{
+    position: absolute; /*Posicionamento absoluto definido*/
+    bottom: 2em; /*Distância da parte inferior definida*/
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; /*Distribuição uniforme definida*/
+}
+
+.social-media i{
+    color: #fd9330;
+    height: 2.5em;
+    width: 2.5em;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 1s; /*Insere-se o tempo de 1 segundo para que a transição da cor para o estado hover (abaixo) ocorra*/
+}
+
+.social-media i:hover{
+    opacity: .9 ; /*Efeito de clareamento, caracterizado por perca de opacidade (já que o fundo é branco).*/
+}
+

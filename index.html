@@ -5,7 +5,8 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- Indica que a largura da página será de acordo com a largura da tela do dispositivo.-->
 
     <link rel="stylesheet" href="style.css">
 
@@ -22,6 +23,14 @@
 
     <div class="container"> <!-- Div criada com nome container pois envolverá toda página. -->
 
+        <div class="hamburger"><!-- O menu hamburger é caracterizado por 3 linhas horizontais colocadas uma acima da outra, e é o que está sendo feito abaixo. -->
+            <div class="line" id="line1"></div> <!--As linhas serão empacotadas no hamgurger, para garantir a proporção paralela das três-->
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+
+            <span>Fechar</span> <!--Criado para indicar onde é preciso clicar para fechar-->
+        </div>
+
         <header> <!--Será o cabeçalho, que será trabalhado hoje.-->
 
             <div class="img-wrapper"> <!--A imagem será colocada em um embrulho, não ficará solta na página, por isso o nome Image Wrapper-->
@@ -29,6 +38,7 @@
             </div>
 
             <div class="banner">
+                
                 <!--Cria-se uma div com a classe banner, onde serão colocados os textos referentes ao nome e apresentação.-->
                 <h1>Designer & Beginner Programmer</h1>
 
@@ -38,11 +48,55 @@
                 HTML é uma linguagem de marcação, cujo principal preocupação é o conteúdo, que deve estar colocado de forma correta.-->
                 
                 <button>Saiba Mais</button>
+
             </div>
 
         </header>
 
+        <div class="sidebar"> <!-- É criada uma div com a classe nomeada "sidebar" ou barra lateral, para representar a div do menu.-->
+            
+            <nav> <!--O Elemento HTML nav representa uma seção de uma página que aponta para outras páginas ou para outras áreas da página, ou seja, uma seção com links de navegação.-->
+                
+                <ul class="menu"> <!-- Esses links serão distrubuídos através de uma lista não ordenada. -->
+                    
+                    <li class="menu-item"> <!--Cada item da lista possui a classe "menu-item" -->
+                        <a href="" class="menu-link">Home</a> <!--E cada link do menu-item possui a classe "menu-lista" -->
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="" class="menu-link"> Conhecimentos </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="" class="menu-link"> Projetos </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="" class="menu-link"> Contato </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="" class="menu-link"> Orçamento </a>
+                    </li>
+
+                </ul>
+
+                <!--Abaixo da lista de links, serão colocados 3 links ligados à ícones de redes sociais-->
+
+                <div class="social-media"> <!-- Os links serão colocados nessa div com classe "social-media"-->
+                    <a href="https://www.instagram.com/ah.cbrl/"><i class="fab fa-instagram-square"></i></a><!-- Cada link (a) possuirá um ícone (i) representando a rede social desejada.-->
+                    <a href=""><i class="fab fa-github-square"></i></i></a>
+                    <a href=""><i class="fab fa-linkedin"></i></a>
+                </div>
+
+            </nav>
+
+        </div>
+
     </div>  
+
+    <!--Primeiro serão carregados os elementos visuais, após tudo isso, os scripts abaixo.-->
+    <script src="script.js"></script>
 
 </body>
 

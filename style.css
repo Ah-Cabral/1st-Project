@@ -101,6 +101,7 @@
     left: -1em;
 }
 
+
 .show-menu .hamburger:hover span{
     opacity: 1;
 }
@@ -299,3 +300,194 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
     opacity: .9 ; /*Efeito de clareamento, caracterizado por perca de opacidade (já que o fundo é branco).*/
 }
 
+.conhecimentos{
+    /*A sessão conhecimentos será feita em display grid*/
+    display: grid;
+    grid-template-columns: repeat(16,1fr); /*Inicialmente, ao tratar das colunas, repetiremos 16 colunas, de 1 frame cada*/
+    grid-template-rows: repeat(4, 4em); /*E ao tratar das linhas, serãp 4 linhas, de 4em cada*/
+    row-gap: 1em; /*Gap = Vão*/
+}
+
+.sessao-conhecimentos{
+    margin-bottom: 2em;
+}
+
+/*Pega-se o primeiro conhecimento (para diferenciar uma classe repetida, utilizase o ":nth-child()" junto ao índice desejado*/
+.conhecimento:nth-child(1){
+    grid-column: 3 / 7; /*Com o display grid, você posiciona o elemento de uma coluna (3) à outra que você deseja (7) = espaçamento de 4*/
+    grid-row: 1 / 3; /*A mesma coisa é feita com as linhas */
+}
+
+.conhecimento:nth-child(2){
+    grid-column: 12 / 15;
+    grid-row: 1 / 3;
+}
+
+.conhecimento:nth-child(3){
+    grid-column: 2 / 5;
+    grid-row: 4 / 6;
+}
+
+.conhecimento:nth-child(4){
+    grid-column: 14 / 17;
+    grid-row: 4 / 6;
+}
+
+.sessao-header{
+    display: flex;
+    align-items: center; /*Lembrete importante: align-items se refere ao alinhamento vertical*/
+    justify-content: center; /* justify-content se refere ao alinhamento horizontal */
+}
+
+.sessao-header h1{
+    font-family: var(--font-primary);
+    font-size: 3em;
+    color: #fd9d30;
+    border-bottom: solid 3px #fd9d30;
+    margin-bottom: 1.5em;
+}
+
+.conhecimento-header{
+    display: flex; /*Ao fazer isso, o ícone e o título já ficam um ao lado do outro*/
+    align-items: center;
+    color: #fd9d30;
+}
+
+.conhecimento-header i{ /*Lembrete: Os ícones são tratados como fontes, então ao importar o font-awesome e escolher um ícone, altere
+    o tamanho dele da seguinte forma:*/
+    font-size: 2.5em;
+}
+
+.conhecimento-header h3{
+    font-family: var(--font-secondary); /*É escolhida a fonte secundária para o h3*/
+    font-size: 2em; /*Além do */
+    padding-left: .5em;
+}
+
+.conhecimento-text{
+    font-family: var(--font-secondary); /*É escolhida a fonte secundária para o texto do conteúdo*/
+    font-size: 1.2em;
+    margin-top: 1em; /*Foi inserida uma margem acima do texto, para distanciá-lo do header*/
+}
+
+.conhecimentos-img-wrapper{
+    grid-column: 7 / 11; /*Defini-se o posicionamento do img-wrapper com o layout grid*/
+    grid-row: 1 / 4;
+    width: 100%;
+}
+
+.conhecimentos-img-wrapper img{
+    object-fit: cover; /*A propriedade object-fit foi criada com finalidade 
+    de controlar a forma como a imagem ocupa a área do box. 
+    para imagens inseridas diretamente na marcação HTML 
+    ( e não as inseridas com uso de background-image ).*/
+    width: 100%;
+}
+
+.projetos{
+    display: flex;
+    justify-content: space-evenly; /*Lembrete -> space-evenly: Espaçamento UNIFORME*/
+}
+
+.card{
+    width: 18em;
+    height: 25em;
+    position: relative; /*Lembrete: O position relative posiciona o elemento em relação a si mesmo. 
+                        Ou seja, o ponto zero será o canto superior esquerdo, e ele começará a contar a partir dali.*/
+    padding-bottom: 1em;
+}
+
+.card-img-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    border-radius: .75em;
+}
+
+.card-img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 75%;
+    border-radius: .75em;
+}
+
+.card:hover .card-img-wrapper img{
+    opacity: 50%;
+    transition: opacity .3s;
+}
+
+.card-info{
+    opacity: 0; /*Inicialmente tem opacidade 0*/
+    visibility: hidden; /*E visibilidade hidden*/
+    position: absolute; /*Lembrete: O position: absolute; serve para que você possa posicionar qualquer elemento de acordo 
+                        com o elemento pai que tenha um position diferente de static.
+                        Ele se utiliza do ponto superior esquerdo de outros elementos.*/
+    bottom: 0; 
+    /*Para posicionar as informações dentro da imagem (do cartão, no caso), 
+    defini-se que a distância das informações para o final do cartão é zero.*/
+    padding: 2em;
+    text-shadow: .5em .15em .25em rgba(0, 0, 0, 0.384); /* offset-x | offset-y | blur-radius | color */
+}
+
+.card-info h2{
+    font-family: var(--font-primary);
+    color:#fd9d30;
+}
+
+.card-info h3{
+    font-family: var(--font-secondary);
+    font-weight: bolder; /*Lembrete: font-weight: PESO da fonte*/
+    color: #ffffff;
+    padding-bottom: .5em;
+}
+
+.card-info p{
+    font-family: var(--font-secondary);
+    color: #ffffff;
+    padding-bottom: .6em;
+}
+
+.card-info button{
+
+    width: 8em;
+
+    height: 2.5em;
+
+    font-family: var(--font-action);
+
+    font-size: .75em;
+
+    color: #ffffff;
+
+    /*Para a cor do button, será utilizado o mesmo gradiente utilizado no início, pego do site uigradients*/
+    
+    background: #FDC830;  
+    
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
+
+    background: linear-gradient(to right, #F37335, #FDC830); 
+
+    padding: .3em 1.2em; /*Coloca-se o espaçamento característico do botão*/
+
+    border: none;/*Retira-se a borda do botão*/
+
+    border-radius: .5em ; /*Utiliza-se o border-radius para fazer com que o botão possua uma borda arredondada*/
+
+    cursor: pointer; /*Utilizado para indicar alteração ao ocorrer interação com o botão*/
+
+    box-shadow: .5em .15em .3em rgba(0, 0, 0, 0.26); /* offset-x | offset-y | blur-radius | color */
+}  
+
+.card:hover .card-info {
+    bottom: 2em; /*Quando o card f*/
+    opacity: 1;
+    visibility: visible;
+    transition: all .4s;
+}
+
+.card-info button:hover{
+    opacity: 0.9; /* a opacidade diminuirá 10%*/
+    color: #1a0c05; /*A cor da fonte mudará*/
+    transition: .5s;
+}

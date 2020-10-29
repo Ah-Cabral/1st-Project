@@ -53,7 +53,7 @@
 
         </header>
 
-        <div class="sidebar"> <!-- É criada uma div com a classe nomeada "sidebar" ou barra lateral, para representar a div do menu.-->
+        <aside class="sidebar"> <!-- É criada uma div com a classe nomeada "sidebar" ou barra lateral, para representar a div do menu.-->
             
             <nav> <!--O Elemento HTML nav representa uma seção de uma página que aponta para outras páginas ou para outras áreas da página, ou seja, uma seção com links de navegação.-->
                 
@@ -91,7 +91,163 @@
 
             </nav>
 
-        </div>
+        </aside>
+
+        <!--A sessão conhecimentos será feita da seguinte forma:-->
+
+        <section class="sessao-conhecimentos">
+            <!--Dentro da sessão, incialmente terá a sessão header (cabeçalho da sessão)-->
+            <div class="sessao-header">
+                <h1>Conhecimentos</h1>
+            </div>
+            <!-- Onde serão divididos em conhecimentos (4 no total, no meu caso) -->
+            <div class="conhecimentos">
+
+                <!--Cada conhecimento terá:-->
+                <div class="conhecimento">
+                    <!--Um título (dentro do conhecimento header)-->
+                    <div class="conhecimento-header">
+                        <!--Que será representado junto à um ícone-->
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML</h3>
+                    </div>
+                    <!--E um pequeno texto explicativo.-->
+                    <div class="conhecimento-text">
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Laboriosam perferendis voluptates optio a libero porro fuga 
+                            quas, eveniet accusamus? Laboriosam cumque ut dicta veniam, 
+                            voluptatibus voluptas minima dignissimos eveniet nemo?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="conhecimento">
+                    <div class="conhecimento-header">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="conhecimento-text">
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Laboriosam perferendis voluptates optio a libero porro fuga 
+                            quas, eveniet accusamus? Laboriosam cumque ut dicta veniam, 
+                            voluptatibus voluptas minima dignissimos eveniet nemo?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="conhecimento">
+                    <div class="conhecimento-header">
+                        <i class="fab fa-github"></i>
+                        <h3>Git e Github</h3>
+                    </div>
+                    <div class="conhecimento-text">
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Laboriosam perferendis voluptates optio a libero porro fuga 
+                            quas, eveniet accusamus? Laboriosam cumque ut dicta veniam, 
+                            voluptatibus voluptas minima dignissimos eveniet nemo?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="conhecimento">
+
+                    <div class="conhecimento-header">
+                        <i class="fas fa-edit"></i>
+                        <h3>Design</h3>
+                    </div>
+
+                    <div class="conhecimento-text">
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Laboriosam perferendis voluptates optio a libero porro fuga 
+                            quas, eveniet accusamus? Laboriosam cumque ut dicta veniam, 
+                            voluptatibus voluptas minima dignissimos eveniet nemo?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="conhecimentos-img-wrapper">
+                    <img src="imagens/conhecimentos.png" alt="">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="sessao-projetos">
+
+            <div class="sessao-header">
+                <h1>Projetos</h1>
+            </div>
+
+            <div class="projetos">
+
+                <div class="card">
+
+                    <div class="card-img-wrapper">
+                        <img src="imagens/proj1.jpg" alt="Imagem do Projeto 1">
+                    </div>
+
+                    <card class="card-info">
+
+                        <h2>1st Project</h2>
+                        <h3>HTML | CSS | Javascript</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Ullam exercitationem doloribus distinctio quasi necessitatibus 
+                            facere nemo repudiandae excepturi autem minima. Quibusdam, in iusto. 
+                            Veritatis quidem culpa error dolor maiores consequuntur.
+                        </p>
+                        <button>Saiba Mais</button>
+
+                    </card>
+                </div>
+
+                <div class="card">
+
+                    <div class="card-img-wrapper">
+                        <img src="imagens/proj2.jpg" alt="Imagem do Projeto 2">
+                    </div>
+
+                    <card class="card-info">
+
+                        <h2>2nd Project</h2>
+                        <h3>HTML | CSS | Javascript</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Ullam exercitationem doloribus distinctio quasi necessitatibus 
+                            facere nemo repudiandae excepturi autem minima. Quibusdam, in iusto. 
+                            Veritatis quidem culpa error dolor maiores consequuntur.
+                        </p>
+                        <button>Saiba Mais</button>
+
+                    </card>
+                </div>
+
+                <div class="card">
+
+                    <div class="card-img-wrapper">
+                        <img src="imagens/proj3.jpg" alt="Imagem do Projeto 3">
+                    </div>
+
+                    <card class="card-info">
+                        <h2>3rd Project</h2>
+                        <h3>HTML | CSS | Javascript</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Ullam exercitationem doloribus distinctio quasi necessitatibus 
+                            facere nemo repudiandae excepturi autem minima. Quibusdam, in iusto. 
+                            Veritatis quidem culpa error dolor maiores consequuntur.
+                        </p>
+                        <button>Saiba Mais</button>
+                    </card>
+
+                </div>
+            </div>
+
+        </section>
+
+
 
     </div>  
 

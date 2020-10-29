@@ -13,10 +13,10 @@ https://www.youtube.com/watch?v=L_JSUkn7LME&list=PLM_90--7SomWgfPYCXnpuoY2L-Z_Z-
 
 ## Ícones
 
-:package: Nova Funcionalidade 
+- :package: Nova Funcionalidade 
 
-:up: Atualização
+- :up: Atualização
 
-:beetle: Correção de Bug
+- :beetle: Correção de Bug
 
-:checkered_flag: Release (Entrega de uma Parte Funcional)
+- :checkered_flag: Release (Entrega de uma Parte Funcional)

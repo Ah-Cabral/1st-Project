@@ -480,14 +480,14 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
 }  
 
 .card:hover .card-info {
-    bottom: 2em; /*Quando o card f*/
-    opacity: 1;
+    bottom: 2em; /*O card subirá da posição 0 para a posição 2em*/
+    opacity: 1; /*A opacidade será total*/
     visibility: visible;
-    transition: all .4s;
+    transition: all .4s; /*A transição disso terá uma duração de meio segundo*/ 
 }
 
 .card-info button:hover{
     opacity: 0.9; /* a opacidade diminuirá 10%*/
     color: #1a0c05; /*A cor da fonte mudará*/
-    transition: .5s;
+    transition: .5s; /*A transição disso terá uma duração de meio segundo*/ 
 }

@@ -180,19 +180,34 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
     animation: movebanner 1.8s;
 }
 
+.btn{
+    /*Para a cor do button, será utilizado o mesmo gradiente utilizado no início, pego do site uigradients*/
+
+    background: #FDC830;  
+
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
+
+    background: linear-gradient(to right, #F37335, #FDC830); 
+
+    padding: .3em 1.2em; /*Coloca-se o espaçamento característico do botão*/
+
+    border: none;/*Retira-se a borda do botão*/
+
+    border-radius: .5em ; /*Utiliza-se o border-radius para fazer com que o botão possua uma borda arredondada*/
+
+    cursor: pointer; /*Utilizado para indicar alteração ao ocorrer interação com o botão*/
+
+    box-shadow: .5em .15em .3em rgba(0, 0, 0, 0.26); /* offset-x | offset-y | blur-radius | color */
+    
+
+    cursor: pointer; /*Utilizado para indicar alteração ao ocorrer interação com o botão*/
+}
+
 .banner button{
 
     font-family: var(--font-action);
 
     color: #ffffff;
-
-    /*Para a cor do button, será utilizado um gradient, pego do site uigradients*/
-   
-    background: #FDC830;  
-   
-    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
-
-    background: linear-gradient(to right, #F37335, #FDC830); 
 
     padding: 1em 3em; /*Coloca-se o espaçamento característico do botão*/
 
@@ -200,17 +215,14 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
 
     text-transform: uppercase; /*Ao utilizar isso, o texto presente no botão fica totalmente maiúsculo*/
 
-    border-radius: 4px ; /*Utiliza-se o border-radius para fazer com que o botão possua uma borda arredondada*/
+    border-radius: 1em ; /*Utiliza-se o border-radius para fazer com que o botão possua uma borda arredondada*/
 
-    cursor: pointer; /*Utilizado para indicar alteração ao ocorrer interação com o botão*/
-
-    transition:color 1s;
+    transition: 1s;
 
     animation: movebanner 2s;
 }
 
 .banner button:hover{ /*Evento hover é um evento de interação, ou seja, quando o mouse entrar em contato com o button*/
-    opacity: 0.9; /* a opacidade diminuirá 10%*/
     color: #1a0c05; /*A cor da fonte mudará*/
 }
 
@@ -450,33 +462,18 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
 
 .card-info button{
 
-    width: 8em;
+    width: 8em; /*Largura do botão defininda*/
 
-    height: 2.5em;
+    height: 2.5em; /*Altura do botão defininda*/
 
-    font-family: var(--font-action);
+    font-family: var(--font-action); /*Fonte do botão defininda*/
 
-    font-size: .75em;
+    font-size: .75em; /*Tamanho da fonte do botão defininda*/
 
-    color: #ffffff;
+    border-radius: 1em; /*Border radius (o quão redonda ficará, rudemente falando) do botão defininda*/
 
-    /*Para a cor do button, será utilizado o mesmo gradiente utilizado no início, pego do site uigradients*/
-    
-    background: #FDC830;  
-    
-    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
+    color: #ffffff; /*Cor escolhida*/
 
-    background: linear-gradient(to right, #F37335, #FDC830); 
-
-    padding: .3em 1.2em; /*Coloca-se o espaçamento característico do botão*/
-
-    border: none;/*Retira-se a borda do botão*/
-
-    border-radius: .5em ; /*Utiliza-se o border-radius para fazer com que o botão possua uma borda arredondada*/
-
-    cursor: pointer; /*Utilizado para indicar alteração ao ocorrer interação com o botão*/
-
-    box-shadow: .5em .15em .3em rgba(0, 0, 0, 0.26); /* offset-x | offset-y | blur-radius | color */
 }  
 
 .card:hover .card-info {
@@ -490,4 +487,111 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
     opacity: 0.9; /* a opacidade diminuirá 10%*/
     color: #1a0c05; /*A cor da fonte mudará*/
     transition: .5s; /*A transição disso terá uma duração de meio segundo*/ 
+}
+
+.sessao-contato{
+    width: 100%; /*Para a sessão contato será colocada 100% da largura*/
+    height: 100vh; /*E 100% da visão de tela*/
+    background-color: #242424;
+    display: flex; /*Dislpay flex para*/
+    align-items: center; /*Alinhar itens*/
+    justify-content: center; /*Ao centro*/
+}
+
+.contato-wrapper{ /*Para o wrapper que envolve a sessão contato, não será utilizada toda a seção*/
+    width: 60%; /*Apenas 60% de largura*/
+    height: 30em; /*E 30em de altura*/
+    display: flex;
+    /*em caso de dúvidas de visualização tire a tag de comentário abaixo para vizualizar rapidamente:*/
+    /*border: 1px solid red;*/
+    box-shadow: .5em .15em .9em rgba(0, 0, 0, 0.3); /* offset-x | offset-y | blur-radius | color */
+}
+
+.contato-left{
+    width: 35%; /*de 100% do wrapper, a parte esquerda (da imagem) ficará com 35%*/
+    background: 
+        linear-gradient(rgba(15,15,15,0.6), rgba(22,22,22,0.92)), /*Para adicionar um leve gradiente na imagem, utiliza-se o linear-gradient
+        de modo que configuram-se 2 cores, inicial e final*/
+        url(imagens/contato.jpg);
+    background-size: cover;/*Background cover definido, para que a imagem possa englobar todo o contato-left, e não o sobressaia*/
+}
+
+.contato-right{
+    width: 65%;/*Já na parte direita (do formulário) serão colocados os 65% que restam*/
+    background-color: #eeeeee; /*O background color é um cinza quase branco*/
+    padding: 1.5em 7em 7em 7em; /*o espaçamento será de 1.5em no topo e 7em nas demais bordas*/
+}
+
+.input-group{
+    position: relative;
+}
+
+.contato-right h1{
+    font-family: var(--font-primary); /*Fonte primária escolhida*/
+    color: #242424; /*Cor escolhida*/
+    text-align: center; /*Texto alinhado ao centro do contato-right*/
+    font-size: 2.5em; /*Font-size escolhida*/
+    font-weight: lighter; /*Peso de fonte "leve" escolhido*/
+}
+
+.contato-right form{
+    width: 100%; /*A largura do formulário englobará 100% do contato-right*/
+    display: flex; /*Ao colocar o display: flex; ele posiciona cada formulário um ao lado do outro, então é necessário*/
+    flex-direction: column; /*que seja definida a direção do flex para coluna*/
+    align-items: center;/*Alinhando itens ao centro*/
+}
+
+.field{/*Editando field = campo de texto*/
+    background: transparent; /*Defini-se um background transparente*/
+    font-family: var(--font-secondary); /*Fonte secundária escolhida*/
+    border: none; /*Retira-se a borda padrão*/
+    width: 20em; /*Defini-se 20em de largura*/
+    height: 2em; /*Altura de 3em escolhida*/
+    font-size: 1em; /*E um tamanho de fonte de 1.5em*/
+    border-bottom: 1.2px dotted #242424; /*Insere-se uma borda inferior pontilhada para melhor identificação de loc. do form.*/
+    outline: none; /*Outline = linha padrão que aparece ao selecionar formulário*/
+    padding-top: 3em; /*Coloca-se um espaçamento inferior no campo para distanciar o campo do título*/
+}
+
+.input-group textarea{
+    margin-top: .75em; /*Coloca-se um espaçamento superior na text-area para distanciar o texto do título*/
+    max-width: 20em;
+    max-height: 1em;
+}
+
+.field-label{ /*Aqui iremos modificar o posicionamento e fonte do field-label (Título do field)*/
+    position: absolute; 
+
+    /*Lembrete: Position Absolute surge para que você possa posicionar qualquer elemento de acordo 
+    com o elemento pai que tenha um position diferente de static.
+    Nesse caso, o elemento pai é o input-group.*/
+    left: 0; /*Aqui ele ficará na posição 0 na direção superior esquerda (em relação ao position relative do el. pai).*/
+    text-transform: uppercase;
+    /*A idéia é que: quando o formulário receba o foco, o texto diminua e suba um pouco*/
+    font-size: 1.2em; /*E aumentamos o font-size*/
+    transition: all .5s;
+}
+
+.field:focus ~ label{ /*Dessa forma, quando o field (campo) estiver em foco, o label que estiver a seguir dele*/
+    font-size: 1em;
+}
+
+.field:focus { /*Além disso, quando o field estiver com foco*/
+    border-bottom: 1px solid;
+    font-size: 1em;
+}
+
+.btn-submit{
+    width: 70%; /*Largura def.*/
+    height: 2em; /*Altura def.*/
+    font-size: 1.2em; /*Tamanho def.*/
+    margin-top: 1em; /*Margem Superior def.*/
+    font-family: var(--font-action); /*Fonte def.*/
+    text-transform: uppercase; /*Modificação na fonte (deixando maiúscula)*/
+    color: #ffffff; /*Cor definida*/
+    transition: 1s; /*Tempo de transição para troca de cor ao ocorrer o evento hover*/
+}
+
+.btn-submit:hover{
+    color: #1a0c05;
 }

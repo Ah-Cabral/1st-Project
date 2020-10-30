@@ -550,14 +550,15 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
     font-size: 1em; /*E um tamanho de fonte de 1.5em*/
     border-bottom: 1.2px dotted #242424; /*Insere-se uma borda inferior pontilhada para melhor identificação de loc. do form.*/
     outline: none; /*Outline = linha padrão que aparece ao selecionar formulário*/
-    padding-top: 3em; /*Coloca-se um espaçamento inferior no campo para distanciar o campo do título*/
+    padding-top: 1.95em; /*Coloca-se um espaçamento inferior no campo para distanciar o campo do título*/
 }
 
 .input-group textarea{
-    margin-top: .75em; /*Coloca-se um espaçamento superior na text-area para distanciar o texto do título*/
+
     max-width: 20em;
     max-height: 1em;
 }
+
 
 .field-label{ /*Aqui iremos modificar o posicionamento e fonte do field-label (Título do field)*/
     position: absolute; 
@@ -592,6 +593,90 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
     transition: 1s; /*Tempo de transição para troca de cor ao ocorrer o evento hover*/
 }
 
-.btn-submit:hover{
+.btn-submit:hover{ /*Quando o botão submit estiver em hover, a cor muda*/
     color: #1a0c05;
+}
+
+.sessao-orcamento{ /*Para a sess. orcamento*/
+    width: 100%; /*Teremos um width de 100%*/
+    height: 100vh; /*Uma altura de 100vh (altura da visão da tela)*/
+    background: /*O background possuirá um gradient com opacidade quase 1*/
+    linear-gradient(rgba(255, 159, 50,.6), rgba(255, 145, 19, 0.74)),
+    /*E uma imagem por trás*/
+    url(imagens/orcamento.jpg);
+    /*Um display flex, com tudo alinhado ao centro*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orcamento-wrapper{ /*Já o contato wrapper englobará 60% de l. e 80% de a.*/
+    width: 60%;
+    height: 80%;
+    display: flex; /*Tudo alinhado ao centro, também*/
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ffffff99; /*Background branco e transparente.*/
+    border-radius: 1em;
+    box-shadow: .5em .15em .9em rgba(0, 0, 0, 0.3); /* offset-x | offset-y | blur-radius | color */
+    position: relative; /*Position relative para o h1 poder se mover livre.*/
+}
+
+.orcamento-wrapper h1{
+    position: absolute; /*Position absolute definida*/
+    top: -.01em; /*Posição inicial definida*/
+    opacity: 0; /*Opacidade inicial definida*/
+    left: .5em; /*Left também, mas essa permanecerá .5em mesmo.*/
+    font-family: var(--font-primary);
+    font-size: 3em;
+    font-weight: 500;
+    color: #eeeeee;
+    
+    background: #FDC830;  
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
+    background: linear-gradient(to right, #F37335, #FDC830); 
+    border-radius: 1em;
+
+    padding: 0em 2em; /*Espaçamento superior e inferior 0, right and left 2.*/
+
+    box-shadow: .5em .15em .9em rgba(0, 0, 0, 0.3);
+    transition: all 1s; /*Tempo de transição definido*/
+}
+
+.sessao-orcamento:hover h1{ /*Quando a sessão orçamento estiver em hover*/
+    top: -1.2em;
+    opacity: 1;
+}
+
+.sessao-orcamento form{ /*Para os formulários*/
+    margin: 4em; /*Será colocada uma margem de 4em*/
+    display: grid; /*O display escolhido será o grid*/
+    grid-template-columns: auto 1fr; /*Serão 2 colunas, uma com tamanho automático, e outra que ocupará 1 frame*/
+    column-gap: 2em; /*O espaçamento entre as coular será de 2em*/
+    row-gap: 3em; /*Já o espaçamento entre as linhas será de 3em*/
+}
+
+.sessao-orcamento label{ /*Para a label*/
+    font-family: var(--font-secondary); /*Escolheremos a fonte secundária*/
+    font-size: 1.5em; /*E o tamanho da fonte*/
+    font-weight: bold; /*Em Bold*/
+}
+
+.sessao-orcamento input[type="number"]{ /*Na sessao orcamento, a input do type number*/
+    font-family: var(--font-secondary); /*Terá como font-family a fonte secundária*/
+    font-size: 2em; /*Tamanho da fonte 2*/
+    outline: none; /*Tiramos a outline = linha que aparece quando ocorre alguma interação com o formulário*/
+    width: 3.5em;
+    border-radius: 1em; /*O raio da borda em 1em = 16 px*/
+    border: none; /*Tiramos a borda do formulário*/
+    padding: 0.3em;
+    
+}
+
+.btn-orcamento{
+    text-transform: uppercase; /*Para o botão orçamento colocamos todas as fontes em maiúsculo*/
+    padding: 1em; /*Adicionamos um padding de 1em*/
+    cursor: pointer; /*Um cursor pointer, para que, a cada ocorrência de hover, ele seja mostrado.*/
+    grid-column: 2; /*E por fim, posicionamos o botão na coluna 2, do dislay grid.*/
 }

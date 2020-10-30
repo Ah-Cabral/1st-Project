@@ -105,13 +105,14 @@
 
                 <!--Cada conhecimento terá:-->
                 <div class="conhecimento">
-                    <!--Um título (dentro do conhecimento header)-->
+                    <!-- Um cabeçalho-->
                     <div class="conhecimento-header">
-                        <!--Que será representado junto à um ícone-->
+                        <!--Que englobará um ícone-->
                         <i class="fab fa-html5"></i>
+                        <!--E um título junto à esse.-->
                         <h3>HTML</h3>
                     </div>
-                    <!--E um pequeno texto explicativo.-->
+                    <!--Além de um pequeno texto explicativo.-->
                     <div class="conhecimento-text">
                         <p>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -176,24 +177,28 @@
             </div>
         </section>
 
+        <!--Para a sessão projetos teremos-->
         <section class="sessao-projetos">
-
+            <!--Um cabeçalho com um h1(título)-->
             <div class="sessao-header">
                 <h1>Projetos</h1>
             </div>
-
+            <!--Uma div para projetos-->
             <div class="projetos">
-
+                <!--Que englobará cada card-->
                 <div class="card">
-
+                    <!-- O card será dividido em: -->
                     <div class="card-img-wrapper">
+                        <!--uma imagem-->
                         <img src="imagens/proj1.jpg" alt="Imagem do Projeto 1">
                     </div>
-
+                    <!-- e as informações -->
                     <card class="card-info">
-
+                        <!--Que serão divididas em um h2 (Título)-->
                         <h2>1st Project</h2>
+                        <!--Um h3 com as informações do que foi utilizado-->
                         <h3>HTML | CSS | Javascript</h3>
+                        <!--Um parágrafo com uma breve descrição sobre-->
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Ullam exercitationem doloribus distinctio quasi necessitatibus 
@@ -247,24 +252,25 @@
 
         </section>
 
+        <!--Para a sessão contato, teremos-->
         <section class="sessao-contato">
-
+            <!--Um contato wrapper, pois a sessão não ficará em toda parte da página.-->
             <div class="contato-wrapper">
-
+                <!--A parte de contatos será dividida em 2 partes (left = imagem)-->
                 <div class="contato-left"></div>
-
+                <!--E a parte direita, com informações-->
                 <div class="contato-right">
-
+                    <!-- Inicialmente com um título de contato-->
                     <h1>Contato</h1>
-
-                    <form action="">
+                    <!-- Um formulário de inserção de nome-->
+                    <form>
                         <div class="input-group">
 
                             <input type=""class="field" id="nome">
 
                             <label for="nome" class="field-label">Nome</label>
                         </div>
-
+                    <!-- Um formulário de inserção de Email-->
                         <div class="input-group">
 
                             <input type="text" class="field" id="email">
@@ -273,7 +279,7 @@
                         </div>
 
                         <div class="input-group">
-
+                            <!-- Um textarea para inserção de uma mensagem-->
                             <textarea class="field" id="mensagem"></textarea>
                             <label for="mensagem" class="field-label">Mensagem</label>
                         </div>
@@ -285,6 +291,45 @@
 
             </div>
 
+        </section>
+        <!--Para a seção de orçamento teremos...-->
+        <section class="sessao-orcamento">
+            <!--Um ""envelope" para o orçamento-->
+            <div class="orcamento-wrapper">
+                <!--Um título para a aba-->
+                <h1>Faça o seu orçamento</h1>
+                <!--E um formulário-->
+                <form>
+                    <!--Que é dividido entre a quantidade de páginas necess.-->
+                    <label for="">Quantidade de páginas</label>
+                    <!--E uma input (entrada) referente a qtd. de páginas-->
+                    <input type="number" min="1" name="qtde" id="qtde">
+                    <!--A necessidade ou não de um script JavaScript-->
+                    <label for="">Preciso de um script JavaScript (JS)</label>
+                    <!--E uma input(entrada) referente a marcação ou não da checkbox-->
+                    <input type="checkbox" name="js" id="js ">
+                    <!--A necessidade do desenvolvimento de um layout-->
+                    <label for="">Layout</label>
+                    <!--Para isso será feita uma div-->
+                    <div class="group-layout">
+                        <!--Que terá uma div com as entradas-->
+                        <div>
+                            <!--radio, para caso a resposta for sim-->
+                            <input type="radio" name="layout" id="layout-sim">
+                            <!--E uma label referente à essa-->
+                            <label for="layout-sim">Preciso de um layout</label> <br>
+                            <!--e outra radio, para caso a resposta seja não-->
+                            <input type= "radio" name="layout" id="layout-nao">
+                            <!--E uma label referente à essa-->
+                            <label for="layout-nao">Ja possuo um layout</label>
+                        </div>
+                    </div>
+
+                    <label for="prazo">Prazo</label>
+                    <input type="range" name="prazo" id="prazo">
+                    <button type="submit" class="btn btn-orcamento">Enviar</button>
+                </form>
+            </div>
         </section>
 
     </div>  

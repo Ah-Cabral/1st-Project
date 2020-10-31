@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt-br">
 
+<html lang="pt-br">
+    
 <head>
 
     <meta charset="UTF-8">
@@ -10,16 +11,21 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
     <title>Portfólio - Arthur Cabral</title>
 
+
+
 </head>
 
 <body>
+    <div class="spinner-wrapper">
+    <div class="spinner"> <p> 	&lt;/&gt; </p> </div>
+    </div>
 
     <div class="container"> <!-- Div criada com nome container pois envolverá toda página. -->
 
@@ -31,13 +37,13 @@
             <span>Fechar</span> <!--Criado para indicar onde é preciso clicar para fechar-->
         </div>
 
-        <header> <!--Será o cabeçalho, que será trabalhado hoje.-->
+        <header id="home"> <!--Será o cabeçalho.-->
 
             <div class="img-wrapper"> <!--A imagem será colocada em um embrulho, não ficará solta na página, por isso o nome Image Wrapper-->
                 <img src="imagens/bg.jpg" alt="Background-Header">
             </div>
 
-            <div class="banner">
+            <div class="banner" >
                 
                 <!--Cria-se uma div com a classe banner, onde serão colocados os textos referentes ao nome e apresentação.-->
                 <h1>Designer & Beginner Programmer</h1>
@@ -60,23 +66,23 @@
                 <ul class="menu"> <!-- Esses links serão distrubuídos através de uma lista não ordenada. -->
                     
                     <li class="menu-item"> <!--Cada item da lista possui a classe "menu-item" -->
-                        <a href="" class="menu-link">Home</a> <!--E cada link do menu-item possui a classe "menu-lista" -->
+                        <a href="#home" class="menu-link">Home</a> <!--E cada link do menu-item possui a classe "menu-lista" -->
                     </li>
 
                     <li class="menu-item">
-                        <a href="" class="menu-link"> Conhecimentos </a>
+                        <a href="#conhecimentos" class="menu-link"> Conhecimentos </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="" class="menu-link"> Projetos </a>
+                        <a href="#projetos" class="menu-link"> Projetos </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="" class="menu-link"> Contato </a>
+                        <a href="#contato" class="menu-link"> Contato </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="" class="menu-link"> Orçamento </a>
+                        <a href="#orcamento" class="menu-link"> Orçamento </a>
                     </li>
 
                 </ul>
@@ -95,7 +101,7 @@
 
         <!--A sessão conhecimentos será feita da seguinte forma:-->
 
-        <section class="sessao-conhecimentos">
+        <section class="sessao-conhecimentos" id="conhecimentos">
             <!--Dentro da sessão, incialmente terá a sessão header (cabeçalho da sessão)-->
             <div class="sessao-header">
                 <h1>Conhecimentos</h1>
@@ -178,7 +184,7 @@
         </section>
 
         <!--Para a sessão projetos teremos-->
-        <section class="sessao-projetos">
+        <section class="sessao-projetos" id="projetos">
             <!--Um cabeçalho com um h1(título)-->
             <div class="sessao-header">
                 <h1>Projetos</h1>
@@ -253,7 +259,7 @@
         </section>
 
         <!--Para a sessão contato, teremos-->
-        <section class="sessao-contato">
+        <section class="sessao-contato" id="contato">
             <!--Um contato wrapper, pois a sessão não ficará em toda parte da página.-->
             <div class="contato-wrapper">
                 <!--A parte de contatos será dividida em 2 partes (left = imagem)-->
@@ -293,7 +299,7 @@
 
         </section>
         <!--Para a seção de orçamento teremos...-->
-        <section class="sessao-orcamento">
+        <section class="sessao-orcamento" id="orcamento">
             <!--Um ""envelope" para o orçamento-->
             <div class="orcamento-wrapper">
                 <!--Um título para a aba-->
@@ -302,14 +308,19 @@
                 <form>
                     <!--Que é dividido entre a quantidade de páginas necess.-->
                     <label for="">Quantidade de páginas</label>
+
                     <!--E uma input (entrada) referente a qtd. de páginas-->
                     <input type="number" min="1" name="qtde" id="qtde">
+
                     <!--A necessidade ou não de um script JavaScript-->
                     <label for="">Preciso de um script JavaScript (JS)</label>
+
                     <!--E uma input(entrada) referente a marcação ou não da checkbox-->
-                    <input type="checkbox" name="js" id="js ">
+                    <input type="checkbox" name="js" id="js">
+
                     <!--A necessidade do desenvolvimento de um layout-->
                     <label for="">Layout</label>
+
                     <!--Para isso será feita uma div-->
                     <div class="group-layout">
                         <!--Que terá uma div com as entradas-->
@@ -325,12 +336,49 @@
                         </div>
                     </div>
 
-                    <label for="prazo">Prazo</label>
-                    <input type="range" name="prazo" id="prazo">
+                    <label for="prazo">Prazo: 6 Semana(s)</label> <!--Coloquei o texto de 6 semanas pois é o valor inicial da range-->
+                    <input type="range" name="prazo" id="prazo" min="1" max="10">
+                    <label id="preco">R$ 0.00</label> <!--Label referente ao valor do orçamento-->
                     <button type="submit" class="btn btn-orcamento">Enviar</button>
                 </form>
             </div>
         </section>
+        <!--Aqui será o rodapé-->
+        <footer>
+            <!--Que terá uma div para conteúdo-->
+            <div class="footer-content">
+                <!--Onde haverá um pequeno texto com os direitos autorais-->
+                <p>
+                    Copyright &copy; 2020, Arthur Cabral - Todos os direitos reservados
+                </p>
+                <!--E uma div com as redes sociais-->
+                <div class="social-list">
+
+                    <ul>
+
+                        <li> 
+                            <a href="https://www.instagram.com/ah.cbrl/"> <i class="fab fa-instagram-square" alt="Ícone instagram Arthur Cabral"> </i> </a> 
+                        </li>
+
+                        <li> 
+                            <a href="https://github.com/Ah-Cabral
+                            "> <i class="fab fa-github-square" alt="Ícone Github"></i> </a> 
+                        </li>
+
+                        <li> 
+                            <a href="https://www.instagram.com/smartdevbr/"> <i class="fas fa-brain" alt="Ícone instagram SmartDev"></i> </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </footer>
+
+        <!--Após isso iremos inserir uma seta apontada para cima, pare redirecionar ao topo-->
+        <button onclick="backtoTop()" ref="#conhecimentos" id="link-topo"> <!--Quando for clicado, a função backtoTop em js vai ser acionada.-->
+            <i class="fas fa-arrow-up"></i>
+        </button>
 
     </div>  
 

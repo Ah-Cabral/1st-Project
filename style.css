@@ -10,11 +10,16 @@
     text-decoration: none; /*Utilizado para remover estilos (sublinhado, por exemplo) de todos os links da página */
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 :root{ /*Atribuindo variáveis às fontes*/
     --font-primary:"Baloo Da 2", serif; /*Fonte Primária*/
     --font-secondary: "Josefin Slab", serif; /*Fonte Secundária*/
     --font-action:"Mulish",serif; /*Fonte de Ação, a qual é usada para eventos de interação*/
 }
+
 
 .hamburger{ /*A div com a class hamburger tem como função conter as lines*/
     width: 2em;
@@ -258,6 +263,7 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
     top: 0; /*Distância do topo*/
     right: -20em; /*Distância da direita*/
     transition: all 1s; /*Configura-se que todas as transições que ocorrerem no sidebar (nesse caso só ocorre uma) terão o tempo de 1 segundo.*/
+    z-index: 90;
 }
 
 .show-menu .sidebar{
@@ -674,9 +680,106 @@ header{ /*Configura-se a header para ocupar 100% do espaço do container (div qu
     
 }
 
+#layout-nao{
+    padding-top: 1em;
+}
+
 .btn-orcamento{
     text-transform: uppercase; /*Para o botão orçamento colocamos todas as fontes em maiúsculo*/
     padding: 1em; /*Adicionamos um padding de 1em*/
     cursor: pointer; /*Um cursor pointer, para que, a cada ocorrência de hover, ele seja mostrado.*/
     grid-column: 2; /*E por fim, posicionamos o botão na coluna 2, do dislay grid.*/
+}
+
+footer{ /*Footer = Rodapé*/
+    width: 100%; /*Terá uma largura de 100% */
+    height: 7em; /*E uma altura limitada de 7em*/
+    background-color: #17181b; /*Um background color escuro*/
+    display: flex; /*E um display flex, que coloca todos os elementos no centro*/
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content{ /*Já o conteúdo do footer*/
+    width: 60%; /*Englobará apenas 60% do rodapé*/
+    display: flex; /*Um display flex também, e a divisão dos elementos será separada em espaços entre os elementos*/
+    justify-content: space-between;
+}
+
+.footer-content p { /*Para o parágrafo*/
+    font-family: var(--font-secondary); /*uma fonte secundária é escolhida*/
+    color: #eeeeee; /*Uma cor quase branca é escolhida, para a fonte*/
+    font-size: 1.2em; /*Tamanho da fonte definido*/
+}
+
+.social-list a{ /*Para os links presentes na social-list*/
+    margin: 0 2em; /*Margem definida*/
+    color: #eeeeee; /*Coloração é a mesma do texto*/
+    font-size: 1.5em; /*Tamanho do ícone um pouco maior*/
+}
+
+.social-list ul{
+    display: flex;
+}
+
+#link-topo{ /*Configuração do botão*/
+    position: fixed; /*Posição fixa*/
+    display: none;
+    font-size: 1.5em;
+    width: 2em;
+    height: 2em;
+    bottom: 3em;
+    right: 3em;
+
+    background: #FDC830;  
+    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  
+    background: linear-gradient(to right, #F37335, #FDC830); 
+    box-shadow: .5em .15em .9em rgba(0, 0, 0, 0.3);
+
+    border-radius: .5em;
+
+    color: #eeeeee;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+}
+
+.spinner-wrapper{
+
+background: #FF512F;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #F09819, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #F09819, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+width: 100%;
+
+}
+
+.spinner{
+    width: 4em;
+    height: 4em;
+    border: 6.5px solid rgb(255, 132, 0);
+    border-left-color:  rgb(14, 7, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    animation: spin .6s linear infinite;
+    box-shadow: 0em 0em 3em rgba(0, 0, 0, 0.822);
+
+}
+
+.spinner p{
+    font-family: var(--font-secondary);
+    font-size: 1.8em;
+}
+
+@keyframes spin{
+    to {transform: rotate(360deg);}
 }

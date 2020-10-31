@@ -21,4 +21,4 @@ https://www.youtube.com/watch?v=L_JSUkn7LME&list=PLM_90--7SomWgfPYCXnpuoY2L-Z_Z-
 
 - :checkered_flag: Release (Entrega de uma Parte Funcional)
 
-## Status atual do projeto: Pré-finalizado (faltando aplicar responsividade)
+## Status atual do projeto: Finalizado (Aplicar responsividade futuramente)
